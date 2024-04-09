@@ -9,3 +9,5 @@ before_install:
   - echo "alo123456" | docker login -u "loclieulinh318" --password-stdin
   - docker pull mediasol/openjdk17-slim-jprofiler
 
+before_script:
+  - chmod -x mvnw
