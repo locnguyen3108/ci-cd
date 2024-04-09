@@ -1,0 +1,11 @@
+language: java
+jdk:
+  - openjdk17
+script:
+  - ./mvnw clean install
+  - ./mvnw deploy jib:build -P deploy-docker
+
+before_install:
+  - echo "alo123456" | docker login -u "loclieulinh318" --password-stdin
+  - docker pull mediasol/openjdk17-slim-jprofiler
+
